@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Structure</title>
+</head>
+<body>
+    <form action="/submit">
+        <!-- Changed 'Name' to 'for' to correctly associate the label with the input field by ID -->
+        <label for="username">Enter Username:</label>
+
+        <!-- Fixed missing closing quote in name attribute -->
+        <input type="text" id="username" name="username">
+
+       <label for="passcode">Password:</label>
+       <!-- Fixed typo: 'typ' to 'type'-->
+       <input type="password" id="passcode" name="password">
+
+       <!-- Fixed misspelled button tag, added type="submit" and corrected the label inside the button -->
+       <button type="submit">Submit Form</button>
+    </form>
+</body>
+</html>
