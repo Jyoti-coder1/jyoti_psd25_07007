@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive List Styling with Combinators and Pseudo-Classes</title>
+    <style>
+        /*Style first list Item in Bold*/
+        ol li:first-child {
+            font-weight: bold;
+        }
+        /* adjacent sibling: style the second item(directly following the first item)*/
+        ol li:first-child + li {
+            background-color: aqua;
+        }
+        /* General Sibling: style all items after the third child in italic */
+        ol li:nth-child(3) ~ li {
+            font-style: italic;
+        }
+        /* Hover effect on all list items */
+        il li:hover {
+            color: yellowgreen;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>First Item(bold)</li>
+        <li>Second Item(Aqua Background)</li>
+        <li>Third Item(Normal)</li>
+        <li>Fourth Item(Italic)</li>
+        <li>Fifth Item(Italic)</li>
+    </ol>
+</body>
+</html>

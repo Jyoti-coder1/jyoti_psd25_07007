@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Complex Navigation</title>
+    <style>
+        /* Base reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            gap: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        /*Section-specific link styling using descendant combinator*/
+        .section-one a {
+            color: green;
+            text-decoration: none;
+        }
+        .section-two a {
+            color: blue;
+            text-decoration: none;
+        }
+        .section-three a {
+            color: purple;
+            text-decoration: none;
+        }
+        /*Hover and Active States*/
+        .section a:hover {
+            text-decoration: underline;
+            color: darkorange;
+        }
+        .section a:active {
+            color: red;
+        }
+        /*Child combinator: only direct <a> children of .section*/
+        .section > a {
+            font-weight: bold;
+        }
+        /*Attribute selector with high specificity for https links*/
+        .section a[href^="https"] {
+            color: darkred !important;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- Section 1 -->
+        <div class="section section-one">
+            <a href="https://google.com">External Link 1</a>
+            <a href="/About">Internal Link 1</a>
+            <div>
+                <a href="/Explore">Nested Link 1</a>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section section-two">
+            <a href="https://www.instagram.com/jmaan145">External Link 2</a>
+            <a href="/Sign up for Instagram">Internal Link 2</a>
+            <div>
+                <a href="/Log in with Facebook">Nested Link 2</a>
+            </div>
+        </div>
+        <!-- Section 3 -->
+        <div class="section section-three">
+            <a href="https://students.masaischool.com/">External Link 3</a>
+            <a href="/Terms and Conditions">Internal Link 3</a>
+            <div>
+                <a href="/Our Courses">Nested Link 3</a>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>

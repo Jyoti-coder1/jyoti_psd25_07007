@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applying Priority in CSS</title>
+    <style>
+        /* Element Selector */
+        div {
+            color: black;
+        }
+        /* Class- selector */
+        .highlight {
+            color: blue;
+        }
+        /* ID - Selector */
+        #special {
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <div class="highlight" id="special">
+        This text shows the color applied based on CSS specificity
+        The text will displayed brown because Element Selector have specificity: 0-0-0-1; class Selector have specificity: 0-0-1-0; ID selectorhave specificity: 0-1-0-0. Since ID Selector have higher specificity than class and element Selector,the color brown fromm #specialis applied.</div>
+</body>
+</html>

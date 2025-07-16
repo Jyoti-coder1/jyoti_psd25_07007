@@ -1,0 +1,38 @@
+/* Reset default spacing and use border-box to prevent box overflow*/
+/*border-box : Fixex unexpected box size due to padding/border*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* ensure padding & border are included in width or height*/
+}
+/* Container to hold boxes in a flexible row*/
+.container {
+    display: flex; /*Align boxex in a row*/
+    /*Layout was not responsive: Use flex-wrap:wrap to aloow items to move on smaller screens*/
+    flex-wrap: wrap; /* allow boxex to wrap on smaller screens*/
+    /*no spacing consistency : Added gap, removed negative margins and added padding*/
+    gap: 10px; /*Space between boxes*/
+    padding: 10px; /*Inner space around the container*/
+    justify-content: center; /* center the boxes horizontally*/
+}
+/*remove position: absolute and margin: -10px from .box to prevent overlap and layput issues*/
+/*Styling each box*/
+.box {
+    width: 100px;
+    height: 100px;
+    background: lightblue;
+    border: 1px solid black;
+    position: relative; /* default layout positioning*/
+}
+/*.text paragraph was stuck at the top-left and overlapping : centered it using left: 50% and transform, with position:fixed to keep it visible*/
+/* styling the fixed paragraph*/
+.text {
+    position: fixed; /* keep it visible on scroll*/
+    left: 50%; /*Horizontal center*/
+    top: 10px; /*Offset slightly from the top*/
+    transform: translateX(-50%); /*precisely center using transform*/
+    background: white; /*white backgrounf for redability*/
+    padding: 5px 10px; /*space around text*/
+    border: 1px solid lightgray; /*light border*/
+    font-weight: bold; /* make the text stand out*/
+}
