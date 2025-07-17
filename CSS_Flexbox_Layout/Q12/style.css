@@ -1,0 +1,23 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;  /*Arrange items in a row(default behaviour)*/
+    gap: 10px; /*Add spacing*/
+    padding: 20px;
+    background-color: gray;
+}
+
+/* uncomment the below line to change layout to column */
+/*
+.flex-container {
+    flex-direction: column;
+    // flex-direction: column stacks the items vertically from top tp bottom
+}
+*/
+
+.item {
+    background-color: green;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+}

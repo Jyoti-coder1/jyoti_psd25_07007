@@ -1,0 +1,34 @@
+/*Identified Problems:
+1. flex-wrap: wrap; is allowing the items to wrap and stack — remove it.
+2. .links is using flex-direction: column;, which stacks links vertically — change to row.
+3. justify-content: center on .navbar is centering everything — instead, space out using space-between.*/
+.navbar {
+    display: flex;
+    justify-content: space-between; /* space between logo and links */
+    align-items: center; /* vertically center content */
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+}
+
+.links {
+    display: flex;
+    gap: 20px; /* evenly space links horizontally */
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+}
+
+/*Explanation of Fixes:
+justify-content: space-between: pushes the .logo to the left and .links to the right.
+align-items: center: keeps both logo and links vertically aligned.
+Removed flex-wrap: wrap: prevents items from wrapping and breaking layout.
+Changed .links to flex-direction: row: aligns links in a row.
+Used gap in .links to keep consistent spacing.*/
