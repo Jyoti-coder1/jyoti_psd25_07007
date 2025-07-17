@@ -1,0 +1,42 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 20x;
+}
+
+#block-element {
+    display: block;
+    width: 100%;
+    border: 2px solid lightskyblue;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: wheat;
+}
+
+#inline-element {
+    display: inline;
+    background-color: orange;
+    padding: 5px;
+    border-radius: 4px;
+    color: black;
+}
+
+#inline-block-element {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background-color: greenyellow;
+    padding: 10px;
+    margin: 10px;
+    border: 2px dashed gray;
+    text-align: center;
+    line-height: 30px;
+}
+
+#hidden-element {
+    display: none;
+    background-color: magenta;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid darkred;
+}

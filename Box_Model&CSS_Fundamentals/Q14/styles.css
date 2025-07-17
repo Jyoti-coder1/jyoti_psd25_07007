@@ -1,0 +1,51 @@
+/* Global reset and Box sizing*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Basic Styling*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+/*Container Layout*/
+.container {
+    display: flex;
+    gap: 20px; /*Space between boxes*/
+    flex-wrap: wrap; /*Allows wrapping on smaller screens*/
+    justify-content: center; /*Center alignment*/
+    margin-top: 20px;
+}
+
+/* Box Styling*/
+.box {
+    width: 100px;
+    height: 100px;
+    background: lightblue;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    line-height: 80px;
+    position: relative; /*No overlap*/
+}
+
+/*Positioned Text*/
+.text {
+    position: fixed;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/*1.Issue: box elements were overlapping dut to position: avsolute and margin: -10px. fix; Removed position: absolute and negative margin, used flexbox layout in .container for alignment.
+2.Issue: Layout was not responsive. Fix: Added flex-wrap: wrap and gap to allow wrapping and spacing on smaller screens.
+3.Issue: Box content overflow.Fix: Used box-sizing border-box globally and padding inside .box
+4.Issue: .text element was hard to read and stuck to adge. fix: Used transform: translateX(-50%) to center it horizontally, added padding and backgroung for redability.
+5. Issue: General spacing and clarity. Fix: Added padding to body and margin-top to .container
+*/

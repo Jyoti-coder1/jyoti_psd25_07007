@@ -1,0 +1,52 @@
+/*Reset default browser padding and margin*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    background-color: aquamarine;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.box {
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* Box1 - container-box */
+.box1 {
+    background-color: lightskyblue;
+    width: 300px;
+    padding: 20px;
+    border: 5px solid lightseagreen;
+    margin: 20px;
+    box-sizing: content-box;
+}
+
+/* Box2 - border-box */
+.box2 {
+    background-color: orange;
+    width: 300px;
+    padding: 20px;
+    border: 5px dashed brown;
+    margin: 30px 50px;
+    box-sizing: border-box;
+}
+
+/* Box3 - default (Contect-box) */
+.box3 {
+    background-color: lightgreen;
+    width: 250px;
+    padding: 10px;
+    border: 10px solid darkolivegreen;
+    margin: 10px 100px;
+    box-sizing: content-box;
+}

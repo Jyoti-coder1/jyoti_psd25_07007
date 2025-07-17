@@ -1,0 +1,38 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding-bottom: 60px; /* space for fixed footer */
+}
+
+.sticky-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 18px;
+}
