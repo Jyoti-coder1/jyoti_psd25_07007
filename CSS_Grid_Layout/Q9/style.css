@@ -1,0 +1,37 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.item1 {
+    background-color: rgb(228, 143, 143);
+}
+
+.item2 {
+    background-color: rgb(114, 114, 198);
+}
+
+.item3 {
+    background-color: rgb(24, 96, 24);
+}
+
+.item4 {
+    background-color: rgb(147, 97, 4);
+}
+
+.item5 {
+    background-color: rgb(165, 150, 165);
+}
+
+.item6 {
+    background-color: rgb(81, 201, 201);
+}
+
+.item7 {
+    background-color: rgb(207, 40, 68);
+}
+
+.item8 {
+    background-color: gray;
+}
