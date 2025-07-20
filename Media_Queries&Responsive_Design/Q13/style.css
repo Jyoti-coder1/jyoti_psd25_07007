@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.navbar {
+    background: #333;
+    color: white;
+    padding: 10px 20px; /*add space inside navbar*/
+    display: flex; /*Arrange brand + hamburger + nav in a row */
+    align-items: center; /*vertically centers item in navbar*/
+    justify-content: space-between; /*Spaces out brand and menu*/
+    position: relative; /* .nav-items is positioned below the navbar which is position: absolute*/
+}
+
+.brand {
+    font-size: 20px;
+    font-weight: bold;
+}/*without it the brand would be small and plain*/
+
+.menu-toggle {
+    display: none;
+} /* Hidden checkbox for toggling the menu*/
+
+.hamburger {
+    font-size: 24px;
+    /* Hamburger icon (shown on small screens) */
+    cursor: pointer;
+    display: block;
+    color: white;
+}
+
+/* Navbar items */
+.nav-items {
+    display: none; /*Needed to hide menu on small screens*/
+    flex-direction: column; /*ensures vertical stacking*/
+    background: #333;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%; /*Make menu full width*/
+    list-style: none;
+}
+
+.nav-items li {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.nav-items a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Show nav when checkbox is checked */
+.menu-toggle:checked+.hamburger+.nav-items {
+    display: flex;
+}
+
+/* Medium screens (768px to 1023px) */
+@media (min-width: 768px) {
+    .nav-items {
+        display: flex;
+        flex-direction: column;
+        position: static;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
+
+/* Large screens (1024px and up) */
+@media (min-width: 1024px) {
+    .nav-items {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}

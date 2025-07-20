@@ -1,0 +1,54 @@
+/* Mobile-first styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 20px;
+}/*Sets readable font and adds spacing around page content */
+
+.container {
+    display: grid; /*turns container into css grid*/
+    grid-template-columns: 1fr; /*1 column for mobile bu default*/
+    gap: 20px; /*Add equal space between cards*/
+    max-width: 1200px; /*prevents layout from stretching too wide on large screens*/
+    margin: auto; /*horizontally centers the whole grid*/
+}
+
+.card {
+    background: #eee;
+    padding: 15px; /*space indie card */
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card h3 {
+    margin: 10px 0; /*add vertical space around the content*/
+}
+
+.card p {
+    margin: 10px 0; /*add vertical space around the description*/
+}
+
+.card button {
+    padding: 8px 12px;/*styles button with inner space*/
+}
+
+@media (min-width: 600px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}/* On Medium screens (600px - 1024px) display the cards in a grid with 2 columns*/
+
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}/* On Large screens (more than 1024px) display the cards in a grid with 3 columns*/

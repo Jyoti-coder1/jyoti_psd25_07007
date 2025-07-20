@@ -1,0 +1,10 @@
+body {
+    font-size: 14px;
+    line-height: 1.5;
+} /*For screens smaller than 600px, all text elements have a font size of 14px and line height of 1.5.*/
+
+@media (min-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+} /*For larger screens, the font size increase to 16px*/
