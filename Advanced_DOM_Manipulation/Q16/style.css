@@ -1,0 +1,31 @@
+/* Basic page styling */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+/* Grid layout with 3 columns */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px; /* space between grid items */
+}
+
+/* Base card style for each product */
+.product-card {
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Green background for in-stock items */
+.in-stock {
+  background-color: green;
+}
+
+/* Red background for out-of-stock items */
+.out-of-stock {
+  background-color: red;
+}

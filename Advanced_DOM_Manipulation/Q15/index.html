@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Task Manager with Event Delegation and Filtering</title>
+</head>
+<body>
+    <h1>Task Manager</h1>
+    <input type="text" id="taskInput" placeholder="Enter new task" />
+    <button id="addTaskBtn">Add Task</button>
+    <button id="sortBtn">Sort A-Z</button>
+    <div>
+        <button id="showAll">All Tasks</button>
+        <button id="showCompleted">Completed Tasks</button>
+        <button id="showIncomplete">Incomplete Tasks</button>
+    </div>
+    <div id="counters">
+        <p>Total: <span id="totalCount">0</span></p>
+        <p>Completed: <span id="completedCount">0</span></p>
+        <p>Incomplete: <span id="incompleteCount">0</span></p>
+    </div>
+    <ul id="taskList"></ul>
+    <script src="script.js"></script>
+</body>
+</html>

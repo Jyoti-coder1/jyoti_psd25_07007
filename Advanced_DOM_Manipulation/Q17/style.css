@@ -1,0 +1,52 @@
+/* Step: Style the page background and font */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+/* Step: Define grid layout for product display */
+#product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Step: Makes responsive grid */
+    gap: 20px;
+    /* Step: Space between grid items */
+}
+
+/* Step: Card design for each product */
+.product-card {
+    background-color: #fff;
+    border: 3px solid;
+    /* Step: Border color will be set conditionally */
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Step: Product image styling */
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+/* Step: Styling title and price */
+.product-title {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-weight: bold;
+}
+
+/* Step: Green border for products priced ≤ $50 */
+.green-border {
+    border-color: green;
+}
+
+/* Step: Yellow border for products priced > $50 */
+.yellow-border {
+    border-color: goldenrod;
+}
