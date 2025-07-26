@@ -1,0 +1,43 @@
+body {
+    font-family: sans-serif;
+    background: white;
+    padding: 20px;
+}
+
+.container {
+    background: wheat;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 6px;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+input, button {
+    padding: 8px;
+    font-size: 16px;
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#taskList li {
+    display: flex;
+    justify-content: space-between;
+    background: whitesmoke;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+.completed {
+    text-decoration: line-through;
+    background: lightcyan;
+}
