@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><Search>and Filter Products with Fetch</Search></title>
+</head>
+<body>
+    <h1>Product Store</h1>
+
+    <!--Controls: Search , Category Filter , Sort-->
+    <div>
+        <input type="text" id="searchInput" placeholder="Search products..." />
+        <select id="categoryFilter">
+            <option value="all">All Categories</option>
+        </select>
+
+        <select id="sortOrder">
+            <option value="default">Sort by</option>
+            <option value="asc">Price: Low to High</option>
+            <option value="desc">Price: High to Low</option>
+        </select>
+    </div>
+
+    <!--Product count-->
+    <p id="productCount">Total products: 0</p>
+
+    <!--Products display area-->
+    <div id="productGrid"></div>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>

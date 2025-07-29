@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>Student Dashboard</h1>
+        <button id="theme-toggle">Toggle Theme</button>
+    </header>
+
+    <section id="controls">
+        <input type="text" id="search" placeholder="Search by name..." />
+        <select id="filter-enrolled">
+            <option value="all">All</option>
+            <option value="true">Enrolled</option>
+            <option value="false">Not Enrolled</option>
+        </select>
+        <select id="filter-grade">
+            <option value="all">All Grades</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+        <select id="sort-option">
+            <option value="name-asc">Name A-Z</option>
+            <option value="age-asc">Age ↑</option>
+            <option value="age-desc">Age ↓</option>
+        </select>
+    </section>
+    <section id="form">
+        <input type="text" id="name" placeholder="Name" />
+        <input type="number" id="age" placeholder="Age" />
+        <select id="grade">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+        <label><input type="checkbox" id="enrolled" /> Enrolled</label>
+        <button id="add-student">Add Student</button>
+    </section>
+    <ul id="student-list"></ul>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

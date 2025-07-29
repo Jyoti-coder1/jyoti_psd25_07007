@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student CRUD App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Student CRUD App</h1>
+
+    <form id="student-form">
+        <input type="text" id="name" placeholder="Enter name" required>
+        <input type="number" id="age" placeholder="Enter age" required>
+        <input type="text" id="course" placeholder="Enter course" required>
+        <button type="submit">Add Student</button>
+    </form>
+
+    <div id="loading">Loading...</div>
+    <div id="error" class="error"></div>
+    <div id="student-list" class="student-list"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

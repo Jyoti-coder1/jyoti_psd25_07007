@@ -1,0 +1,36 @@
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+}
+
+h2, h3 {
+    color: #333;
+}
+
+form {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    border-radius: 5px;
+}
+
+#userList {
+    margin-top: 15px;
+}
+
+.list-group-item {
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+#loading {
+    display: none;
+    color: #0066cc;
+    font-weight: bold;
+}
