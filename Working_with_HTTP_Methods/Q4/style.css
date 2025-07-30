@@ -1,0 +1,30 @@
+body {
+    font-family: sans-serif;
+    margin: 2rem;
+    background: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+}
+
+.task {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.task input,
+.task select {
+    padding: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}

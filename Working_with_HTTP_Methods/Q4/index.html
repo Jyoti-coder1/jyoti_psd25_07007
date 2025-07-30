@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Task Manager</h1>
+    <div id="task-list"></div>
+    <template id="task-template">
+        <div class="task">
+            <input type="text" class="task-title" disabled />
+            <select class="task-status" disabled>
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <button class="edit-btn">Edit</button>
+            <button class="save-btn hidden">Save</button>
+            <button class="delete-btn">Delete</button>
+        </div>
+    </template>
+    <script src="script.js"></script>
+</body>
+</html>
