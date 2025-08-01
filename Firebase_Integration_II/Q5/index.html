@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novel List</title>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Novel List</h1>
+    <div class="controls">
+        <input type="text" id="search" placeholder="Search by title or author" />
+        <select id="filter-year">
+            <option value="">Filter by Year</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+        </select>
+
+        <select id="sort-price">
+            <option value="">Sort by Price</option>
+            <option value="asc">Low to High</option>
+            <option value="desc">High to Low</option>
+        </select>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Year</th>
+                <th>Genre</th>
+            </tr>
+        </thead>
+        <tbody id="novel-list"></tbody>
+    </table>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>

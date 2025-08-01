@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management System</title>
+</head>
+<body>
+    <h1>Library Management System</h1>
+    <section>
+        <h2>Add Book</h2>
+        <form id="book-form">
+            <input id="book-title" type="text" placeholder="Title" required />
+            <input id="book-author" type="text" placeholder="Author" required />
+            <input id="book-genre" type="text" placeholder="Genre" required />
+            <input id="book-year" type="number" placeholder="Published Year" required />
+            <select id="book-available">
+                <option value="true">Available</option>
+                <option value="false">Not Available</option>
+            </select>
+            <button type="submit">Add Book</button>
+        </form>
+    </section>
+    <section>
+        <h2>Filters & Sorting</h2>
+        <select id="filter-genre">
+            <option value="">All Genres</option>
+            <option value="Science Fiction">Science Fiction</option>
+            <option value="Dystopian">Dystopian</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Mystery">Mystery</option>
+        </select>
+        <input id="filter-author" type="text" placeholder="Author name" />
+        <select id="filter-available">
+            <option value="">All</option>
+            <option value="true">Available</option>
+            <option value="false">Not Available</option>
+        </select>
+        <select id="sort-key">
+            <option value="title">Sort by Title</option>
+            <option value="author">Sort by Author</option>
+            <option value="publishedYear">Sort by Year</option>
+        </select>
+        <select id="sort-order">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+        </select>
+
+        <label>Items per page:
+            <select id="items-per-page">
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+            </select>
+        </label>
+    </section>
+    <section>
+        <h2>Book List</h2>
+        <div id="book-list"></div>
+        <div id="pagination">
+            <button id="prev-page">Previous</button>
+            <span id="current-page">1</span>
+            <button id="next-page">Next</button>
+        </div>
+    </section>
+    <hr />
+    <section>
+        <h2>Add Member</h2>
+        <form id="member-form">
+            <input id="member-name" type="text" placeholder="Name" required />
+            <input id="member-date" type="date" required />
+            <select id="member-active">
+                <option value="true">Active</option>
+                <option value="false">Inactive</option>
+            </select>
+            <button type="submit">Add Member</button>
+        </form>
+    </section>
+    <section>
+        <h2>Member List</h2>
+        <div id="member-list"></div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
