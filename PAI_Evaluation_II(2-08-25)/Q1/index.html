@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdeaHub</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js"></script>
+</head>
+<body>
+    <!--Auth Modal-->
+    <div id="auth-modal" class="hidden">
+        <h2>Login/Signup</h2>
+        <input id="email" type="email" placeholder="Email">
+        <input id="password" type="password" placeholder="Password">
+        <button id="login-btn">Login</button>
+        <button id="signup-btn">Sign Up</button>
+    </div>
+
+    <header>
+        <h1>IdeaHub</h1>
+        <span id="username"></span>
+        <button id="logout-btn" class="hidden">Logout</button>
+    </header>
+
+    <!--search and sort bar-->
+    <section>
+        <input id="search-bar" type="text" placeholder="Search ideas...">
+        <select id="sort-select">
+            <option value="recent">Most Recent</option>
+            <option value="popular">Most Popular</option>
+        </select>
+    </section>
+
+    <!--Submit Idea Button-->
+    <button id="submit-btn">Submit Idea</button>
+
+    <!--Modal for new idea-->
+    <div id="modal" class="hidden">
+        <div class="modal-content">
+            <h3> New Idea</h2>
+            <input id="idea-title" type="text" placeholder="Title">
+            <textarea id="idea-description" placeholder="Description"></textarea>
+            <button id="submit-idea">Submit</button>
+            <button id="close-modal">Close</button>
+        </div>
+    </div>
+     
+    <!--Ideas List-->
+    <section id="ideas-container"></section>
+
+    <!--Load More-->
+    <button id="load-more">Load More</button>
+
+    <script src="firebase-config.js"></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

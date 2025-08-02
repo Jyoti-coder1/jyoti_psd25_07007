@@ -1,0 +1,36 @@
+{
+    "ideas": {
+        "idea1": {
+            "title": "AI-powered Study Assistant",
+            "description": "An assistant that helps students plan, revise and stay motivated using real time reminders and suggestions.",
+            "upvotes": 2,
+            "createdAt": 1722591123456,
+            "creator": "demo-user-001",
+            "voters": {
+                "demo-user-001": true,
+                "demo-user-002": true
+            }
+        },
+        "idea2": {
+            "title": "Offline-first-Collaboration",
+            "description": "Build a web-based collaboration platform that syncs when reconnected.",
+            "upvotes": 3,
+            "createdAt": 1722591223456,
+            "creator": "demo-user-002",
+            "voters": {
+                "demo-user-002": true,
+                "demo-user-003": true
+            }
+        },
+        "idea3": {
+            "title": "Gamified Habit Tracker",
+            "description": "Turn habit building into a game with points, levels and streaks.",
+            "upvotes": 1,
+            "createdAt": 1722591323456,
+            "creator": "demo-user-001",
+            "voters": {
+                "demo-user-001": true
+            }
+        }
+    }
+}

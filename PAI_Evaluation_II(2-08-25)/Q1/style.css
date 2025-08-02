@@ -1,0 +1,14 @@
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+}
+
+.idea-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+}
