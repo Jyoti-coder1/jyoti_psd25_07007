@@ -1,0 +1,34 @@
+{
+    "ideas": {
+        "eco1": {
+            "title": "Plant Trees in Cities",
+            "description": "Plant trees in urban areas to reduce heat islands.",
+            "upvotes": 3,
+            "timestamp": 1690985000000,
+            "authorId": "demo-user-1",
+            "upvoters": {
+                "demo-user-1": true
+            }
+        },
+        "tech1": {
+            "title": "AI-based Job Assistant",
+            "description": "AI tool that helps match job seekers with roles.",
+            "upvotes": 5,
+            "timestamp": 1690988000000,
+            "authorId": "demo-user-2",
+            "upvoters": {
+                "demo-user-2": true
+            }
+        },
+        "green1": {
+            "title": "Zero Waste Schools",
+            "description": "Promote composting and recycling in every school.",
+            "upvotes": 4,
+            "timestamp": 1690986000000,
+            "authorId": "demo-user-3",
+            "upvoters": {
+                "demo-user-3": true
+            }
+        }
+    }
+}

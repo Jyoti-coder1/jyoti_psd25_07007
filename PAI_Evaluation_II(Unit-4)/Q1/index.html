@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IdeaHub</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>IdeaHub</h1>
+        <div id="auth-buttons">
+            <div id="userInfo">Not logged in</div>
+            <button id="loginBtn">Login</button>
+            <button id="logoutBtn" style="display: none;">Logout</button>
+        </div>
+    </header>
+
+    <section id="controls">
+        <input type="text" id="searchInput" placeholder="Search ideas..." />
+        <select id="sortSelect">
+            <option value="recent">Most Recent</option>
+            <option value="popular">Most Popular</option>
+        </select>
+        <button id="submitBtn" style="display: none;">+ Submit Idea</button>
+    </section>
+
+    <main id="ideaFeed">
+        <!-- Ideas will be dynamically loaded here -->
+    </main>
+
+    <button id="loadMoreBtn" style="display: none;">Load More</button>
+
+    <!-- Modal for Submit Idea -->
+    <div id="ideaModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Submit a New Idea</h2>
+            <form id="ideaForm">
+                <input type="text" name="title" placeholder="Title" required />
+                <textarea name="description" placeholder="Description" required></textarea>
+                <button type="submit">Submit</button>
+                <button type="button" id="closeModal">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
