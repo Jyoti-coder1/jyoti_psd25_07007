@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <h2>Register</h2>
+    <form id="registerForm">
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <select id="role">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+        </select>
+        <button type="submit">Register</button>
+    </form>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyCjcThseYRSMshvXJlLlcFTaDDjq8F2qyk",
+            authDomain: "ecommerce-admin-panel-e729a.firebaseapp.com",
+            databaseURL: "https://ecommerce-admin-panel-e729a-default-rtdb.firebaseio.com",
+            projectId: "ecommerce-admin-panel-e729a",
+            storageBucket: "ecommerce-admin-panel-e729a.firebasestorage.app",
+            messagingSenderId: "521635669190",
+            appId: "1:521635669190:web:550ed835bc04f6a851e3c7"
+        };
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const db = getDatabase();
+
+        registerForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const email = email.value;
+            const password = password.value;
+            const role = role.value;
+            try {
+                const userCred = await createUserWithEmailAndPassword(auth, email, password);
+                await set(ref(db, `users/${userCred.user.uid}`), { email, role });
+                alert("Registered successfully!");
+                window.location.href = "login.html";
+            } catch (err) {
+                alert("Registration failed: " + err.message);
+            }
+        });
+    </script>
+</body>
+</html>

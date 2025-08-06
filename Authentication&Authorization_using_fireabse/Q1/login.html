@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Email"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button id="loginBtn">Login</button>
+
+    <script type="module">
+        import { db } from "./firebase-config.js";
+        import { ref, onValue } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+
+        document.getElementById("loginBtn").addEventListener("click", () => {
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            const usersRef = ref(db, 'users');
+            onValue(usersRef, (snapshot) => {
+                let loggedIn = false;
+                snapshot.forEach((childSnapshot) => {
+                    const user = childSnapshot.val();
+                    if (user.email === email && user.password === password) {
+                        localStorage.setItem("loggedIn", "true");
+                        loggedIn = true;
+                        window.location.href = "dashboard.html";
+                    }
+                });
+                if (!loggedIn) {
+                    alert("Wrong credentials! Try again.");
+                }
+            }, {
+                onlyOnce: true
+            });
+        });
+    </script>
+</body>
+</html>

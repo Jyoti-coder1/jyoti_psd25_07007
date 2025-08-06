@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+    <form id="addProductForm">
+        <input id="title" placeholder="Title" required />
+        <input id="price" type="number" placeholder="Price" required />
+        <input id="image" placeholder="Image URL" required />
+        <button type="submit">Add Product</button>
+    </form>
+    <div id="productList"></div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+        import { getDatabase, ref, push, set, onValue, update, remove } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyCjcThseYRSMshvXJlLlcFTaDDjq8F2qyk",
+            authDomain: "ecommerce-admin-panel-e729a.firebaseapp.com",
+            databaseURL: "https://ecommerce-admin-panel-e729a-default-rtdb.firebaseio.com",
+            projectId: "ecommerce-admin-panel-e729a",
+            storageBucket: "ecommerce-admin-panel-e729a.firebasestorage.app",
+            messagingSenderId: "521635669190",
+            appId: "1:521635669190:web:550ed835bc04f6a851e3c7"
+        };
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase();
+
+        const role = sessionStorage.getItem("role");
+        if (role !== "admin") window.location.href = "user-dashboard.html";
+
+        const productList = document.getElementById("productList");
+        const form = document.getElementById("addProductForm");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const title = form.title.value;
+            const price = Number(form.price.value);
+            const image = form.image.value;
+            await set(push(ref(db, "products")), { title, price, image });
+            form.reset();
+        });
+
+        onValue(ref(db, "products"), (snap) => {
+            productList.innerHTML = "";
+            const data = snap.val();
+            for (let id in data) {
+                const { title, price, image } = data[id];
+                productList.innerHTML += `
+                    <div>
+                        <img src="${image}" width="100" />
+                        <h3>${title}</h3>
+                        <p>$${price}</p>
+                        <button onclick="edit('${id}')">Edit</button>
+                        <button onclick="del('${id}')">Delete</button>
+                    </div>
+                `;
+            }
+        });
+
+        window.edit = async (id) => {
+            const title = prompt("New title");
+            const price = prompt("New price");
+            const image = prompt("New image");
+            await update(ref(db, `products/${id}`), { title, price: Number(price), image });
+        };
+
+        window.del = async (id) => {
+            await remove(ref(db, `products/${id}`));
+        };
+    </script>
+</body>
+</html>

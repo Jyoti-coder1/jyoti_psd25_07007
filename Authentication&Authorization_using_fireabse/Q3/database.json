@@ -1,0 +1,19 @@
+{
+  "users": {
+    "uid1": {
+      "email": "admin@example.com",
+      "role": "admin"
+    },
+    "uid2": {
+      "email": "user@example.com",
+      "role": "user"
+    }
+  },
+  "products": {
+    "productID1": {
+      "title": "Smartphone",
+      "price": 599,
+      "image": "https://example.com/image1.jpg"
+    }
+  }
+}
