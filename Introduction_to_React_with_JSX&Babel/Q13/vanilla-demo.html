@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Vanilla DOM Example</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Original Title</h1>
+    <p>DOM Updates: <span id="updateCount">0</span></p>
+    <button id="changeVanilla">Change Title (Vanilla JS)</button>
+    <script>
+        let vanillaUpdateCount = 0;
+        document.getElementById("changeVanilla").addEventListener("click", () => {
+            const titleElement = document.getElementById("title");
+            titleElement.textContent = "Title Changed (Vanilla JS) - " + Date.now();
+            vanillaUpdateCount++;
+            document.getElementById("updateCount").textContent = vanillaUpdateCount;
+        });
+    </script>
+</body>
+</html>

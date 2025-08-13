@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>React SPA</title>
+    <!-- Load React and ReactDOM from CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Load Babel to compile JSX in browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        /* Basic navbar styling */
+        nav {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        nav button {
+            margin-right: 10px;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- React app will render here -->
+    <div id="root"></div>
+    <script type="text/babel">
+        // Main App component
+        function App() {
+            const [activePage, setActivePage] = React.useState("Home"); // State to track page
+
+            const pageStyles = {
+                Home: { backgroundColor: "#f0f8ff", padding: "20px" },
+                About: { backgroundColor: "#fff0f5", padding: "20px" },
+                Contact: { backgroundColor: "#f5fff0", padding: "20px" }
+            };
+
+            // Renders page content based on active page
+            const renderPage = () => {
+                if (activePage === "Home") return <h2>Welcome to Home</h2>;
+                if (activePage === "About") return <h2>About Us</h2>;
+                if (activePage === "Contact") return <h2>Contact Us</h2>;
+            };
+
+            return (
+                <div>
+                    {/* Navbar */}
+                    <nav>
+                        <button onClick={() => setActivePage("Home")}>Home</button>
+                        <button onClick={() => setActivePage("About")}>About</button>
+                        <button onClick={() => setActivePage("Contact")}>Contact</button>
+                    </nav>
+                    {/* Page content */}
+                    <div style={pageStyles[activePage]}>{renderPage()}</div>
+                </div>
+            );
+        }
+
+        // Render App into #root
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+    </script>
+</body>
+</html>
