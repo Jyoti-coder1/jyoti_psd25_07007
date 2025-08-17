@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Pricing Plans</title>
+    <!-- React & ReactDOM via CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .plan {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .features li {
+            margin-bottom: 5px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #4f46e5;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4338ca;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        //Reusable Feature component
+        function Feature({ text }) {
+            return <li>✔ {text}</li>;
+        }
+
+        //Reusable Plan component
+        function Plan({ name, price, features }) {
+            return (
+                <div className="plan">
+                    <div>
+                        <h3>{name}</h3>
+                        <ul className="features">
+                            {features.map((feature, index) => (
+                                <Feature key={index} text={feature} />
+                            ))}
+                        </ul>
+                    </div>
+                    <div>
+                        <p className="price">{price}</p>
+                        <button>Get Started</button>
+                    </div>
+                </div>
+            );
+        }
+
+        //Parent Component
+        function App() {
+            return (
+                <div className="container">
+                    <h2>The Right Plan for <span style={{ color: "#4f46e5" }}>Your Business</span></h2>
+                    <p className="subtitle">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quod in iure vero. Facilis magnam, sed officiis commodi labore odit.
+                    </p>
+
+                    <Plan
+                        name="Starter"
+                        price="Free"
+                        features={["1 lorem ipsum", "Lorem, ipsum dolor.", "Monthly Updates"]}
+                    />
+                    <Plan
+                        name="Lorem Plus"
+                        price="$32.00"
+                        features={["1 lorem ipsum", "Lorem, ipsum dolor.", "Monthly Updates"]}
+                    />
+                    <Plan
+                        name="Lorem Pro"
+                        price="$50.00"
+                        features={["1 lorem ipsum", "Lorem, ipsum dolor.", "Monthly Updates"]}
+                    />
+                </div>
+            );
+        }
+
+        //Rendering to DOM
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+    </script>
+</body>
+</html>

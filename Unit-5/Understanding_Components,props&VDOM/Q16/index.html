@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Product Card with Props</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            width: 220px;
+            text-align: center;
+            position: relative;
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .discount {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: red;
+            color: #fff;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // Component with props
+        function ProductCard({ name, price, image, discount }) {
+            return (
+                <div className="card">
+                    {discount > 0 && <span className="discount">{discount}% OFF</span>}
+                    <img src={image} alt={name} />
+                    <h3>{name}</h3>
+                    <p>Price: ${price}</p>
+                </div>
+            );
+        }
+
+        function App() {
+            // state: products array (VDOM updates when state changes)
+            const [products, setProducts] = React.useState([]);
+
+            // controlled form state
+            const [form, setForm] = React.useState({ name: "", price: "", image: "", discount: "" });
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+
+                // simple validation
+                if (!form.name || Number(form.price) <= 0 || !form.image.startsWith("http")) {
+                    alert("Please enter valid product details.");
+                    return;
+                }
+
+                setProducts([...products, {
+                    name: form.name,
+                    price: Number(form.price),
+                    image: form.image,
+                    discount: form.discount ? Number(form.discount) : 0
+                }]);
+
+                setForm({ name: "", price: "", image: "", discount: "" });
+            };
+
+            return (
+                <div>
+                    <h2>Add Product</h2>
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            type="text"
+                            placeholder="Name"
+                            value={form.name}
+                            onChange={(e) => setForm({ ...form, name: e.target.value })}
+                        /><br />
+                        <input
+                            type="number"
+                            placeholder="Price"
+                            value={form.price}
+                            onChange={(e) => setForm({ ...form, price: e.target.value })}
+                        /><br />
+                        <input
+                            type="text"
+                            placeholder="Image URL"
+                            value={form.image}
+                            onChange={(e) => setForm({ ...form, image: e.target.value })}
+                        /><br />
+                        <input
+                            type="number"
+                            placeholder="Discount %"
+                            value={form.discount}
+                            onChange={(e) => setForm({ ...form, discount: e.target.value })}
+                        /><br />
+                        <button type="submit">Add Product</button>
+                    </form>
+
+                    <h2>Product List</h2>
+                    {products.map((p, i) => (
+                        <ProductCard key={i} {...p} />
+                    ))}
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+</body>
+</html>
