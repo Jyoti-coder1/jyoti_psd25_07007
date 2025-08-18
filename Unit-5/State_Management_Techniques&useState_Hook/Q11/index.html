@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- React and ReactDOM CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- React code -->
+    <script type="text/babel">
+        const { useState } = React;
+
+        function TodoList() {
+            const [tasks, setTasks] = useState([]);
+            const [input, setInput] = useState('');
+
+            const addTask = () => {
+                // Bug Fix 1: Prevent empty tasks
+                if (input.trim() === '') return;
+
+                setTasks([...tasks, { text: input, completed: false }]);
+                setInput('');
+            };
+
+            const toggleComplete = (index) => {
+                const newTasks = [...tasks];
+                newTasks[index].completed = !newTasks[index].completed;
+                setTasks(newTasks);
+            };
+
+            const deleteTask = (index) => {
+                // Bug Fix 2: Correct deletion logic
+                const newTasks = tasks.filter((_, i) => i !== index);
+                setTasks(newTasks);
+            };
+
+            return (
+                <div>
+                    <h2>React To-Do List</h2>
+                    <input
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        placeholder="Add new task"
+                    />
+                    <button onClick={addTask}>Add Task</button>
+                    <ul>
+                        {tasks.map((task, i) => (
+                            <li key={i}>
+                                <span
+                                    className={task.completed ? 'completed' : ''}
+                                    onClick={() => toggleComplete(i)}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    {task.text}
+                                </span>
+                                <button onClick={() => deleteTask(i)}>Delete</button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<TodoList />);
+    </script>
+</body>
+</html>

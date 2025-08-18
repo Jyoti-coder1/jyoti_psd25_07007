@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input {
+            padding: 5px;
+            margin-right: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin: 5px 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .empty {
+            font-style: italic;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- React and ReactDOM CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <script>
+        const { useState } = React;
+
+        function TodoApp() {
+            const [tasks, setTasks] = useState(["Buy milk", "Study React"]);
+            const [input, setInput] = useState("");
+
+            const addTask = () => {
+                if (input.trim() === "") return; // Avoid empty tasks
+                setTasks([...tasks, input.trim()]);
+                setInput("");
+            };
+
+            const clearTasks = () => {
+                setTasks([]);
+            };
+
+            return React.createElement(
+                "div",
+                null,
+                React.createElement("h1", null, "Todo List"),
+                React.createElement("input", {
+                    type: "text",
+                    value: input,
+                    onChange: (e) => setInput(e.target.value),
+                    placeholder: "Enter a task"
+                }),
+                React.createElement("button", { onClick: addTask }, "Add Task"),
+                React.createElement("button", { onClick: clearTasks }, "Clear All"),
+                tasks.length === 0
+                    ? React.createElement("p", { className: "empty" }, "No tasks available.")
+                    : React.createElement(
+                        "ul",
+                        null,
+                        tasks.map((task, index) =>
+                            React.createElement("li", { key: index }, task)
+                        )
+                    )
+            );
+        }
+
+        ReactDOM.render(
+            React.createElement(TodoApp),
+            document.getElementById("root")
+        );
+    </script>
+</body>
+</html>
