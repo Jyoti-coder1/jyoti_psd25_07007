@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Axios API Example</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function App() {
+            const [users, setUsers] = React.useState([]);
+            const [loading, setLoading] = React.useState(false);
+            const [error, setError] = React.useState(null);
+            const fetchUsers = () => {
+                setLoading(true);
+                setError(null);
+                axios.get("https://jsonplaceholder.typicode.com/users")
+                    .then(response => {
+                        setUsers(response.data);
+                        setLoading(false);
+                    })
+                    .catch(err => {
+                        setError("Failed to fetch data");
+                        setLoading(false);
+                    });
+            };
+            return (
+                <div style={{ padding: "20px", fontFamily: "Arial" }}>
+                    <h2>React Axios API Example</h2>
+                    <button onClick={fetchUsers}>Load Users</button>
+                    {loading && <p>Loading...</p>}
+                    {error && <p style={{ color: "red" }}>{error}</p>}
+                    <ul>
+                        {users.map(user => (
+                            <li key={user.id}>
+                                <strong>{user.name}</strong> - {user.email}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+    </script>
+</body>
+</html>
