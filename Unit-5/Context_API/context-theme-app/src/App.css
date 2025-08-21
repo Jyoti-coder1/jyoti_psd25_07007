@@ -1,0 +1,33 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app {
+  text-align: center;
+  padding: 20px;
+}
+
+.toggle-btn {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.themed-box {
+  padding: 40px;
+  border-radius: 8px;
+  color: white;
+}
+
+.themed-box.light {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+.themed-box.dark {
+  background-color: #333;
+  color: white;
+}

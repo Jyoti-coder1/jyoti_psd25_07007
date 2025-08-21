@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f0f2f5;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+.notification-list {
+  list-style: none;
+  padding: 0;
+}
+
+.notification {
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.notification.unread {
+  font-weight: bold;
+  background: #d1f7d1;
+}
+
+.notification.read {
+  font-weight: normal;
+  background: #f9f9f9;
+}
+
+.controls {
+  margin-top: 15px;
+}
+
+button {
+  padding: 6px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background: #4caf50;
+  color: white;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #45a049;
+}
