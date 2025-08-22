@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #222;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.navlinks a {
+  text-decoration: none;
+  margin-left: 1rem;
+  color: #222;
+}
+
+.navlinks a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #222;
+}
+
+.searchbar {
+  margin: 1rem 0;
+}
+
+.searchbar input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.postlist {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.postcard {
+  background: #fff;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.postcard h3 {
+  margin: 0 0 0.5rem;
+}
+
+.excerpt {
+  color: #555;
+}
+
+.readmore {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.tags {
+  margin-top: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  background: #eee;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.4rem;
+  font-size: 0.8rem;
+}
+
+.postdetails {
+  background: #fff;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.postdetails h1 {
+  margin-top: 0;
+}
+
+.backlink {
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
