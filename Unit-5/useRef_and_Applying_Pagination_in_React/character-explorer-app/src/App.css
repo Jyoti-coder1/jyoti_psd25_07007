@@ -1,0 +1,46 @@
+.app {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.card {
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #ddd;
+}
+
+.pagination button.active {
+  background: #4caf50;
+  color: white;
+}

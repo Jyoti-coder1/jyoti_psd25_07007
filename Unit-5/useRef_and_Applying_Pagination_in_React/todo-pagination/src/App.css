@@ -1,0 +1,37 @@
+.app {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-list li {
+  margin: 5px 0;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 3px;
+  padding: 6px 12px;
+  border: 1px solid #333;
+  background: white;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: lightblue;
+  font-weight: bold;
+}
+
+.pagination button:disabled {
+  background: #f0f0f0;
+  cursor: not-allowed;
+}
