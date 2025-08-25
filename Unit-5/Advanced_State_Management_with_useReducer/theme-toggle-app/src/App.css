@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.home.light {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.home.dark {
+  background-color: #222;
+  color: #f9f9f9;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.home.light button {
+  background-color: #222;
+  color: #fff;
+}
+
+.home.dark button {
+  background-color: #f9f9f9;
+  color: #222;
+}

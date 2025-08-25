@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app-container {
+  max-width: 400px;
+  margin: auto;
+}
+
+h1 {
+  color: #333;
+}
+
+.toggle-btn {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.toggle-btn:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #444;
+}
