@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}

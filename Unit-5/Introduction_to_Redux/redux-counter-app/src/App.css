@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+}
+
+.counter-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 16px;
+  border: none;
+  background-color: teal;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkcyan;
+}
