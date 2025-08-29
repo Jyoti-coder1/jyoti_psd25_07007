@@ -1,0 +1,18 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #e0f7fa, #e1bee7);
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 10px;
+  }
+}
