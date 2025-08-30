@@ -1,0 +1,37 @@
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+  font-family: Arial, sans-serif;
+}
+
+.counter-container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.count-value {
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+.btn-group button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #6c63ff;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-group button:hover {
+  background: #5548d9;
+}
