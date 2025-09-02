@@ -1,0 +1,342 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --panel-2: #0b1220;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --primary: #3b82f6;
+  --chip: #1f2937;
+  --green: #22c55e;
+  --red: #ef4444;
+  --shadow: 0 10px 30px rgba(0, 0, 0, .25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  opacity: .9;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+.app-shell {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--panel);
+  padding: 10px 12px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+}
+
+.nav-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.nav-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin-right: 8px;
+}
+
+.user-pill {
+  background: var(--chip);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.btn {
+  background: #1f2937;
+  color: var(--text);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn.link {
+  background: transparent;
+  color: var(--primary);
+  padding: 0;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 800px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.center-card {
+  max-width: 520px;
+  margin: 48px auto;
+  text-align: center;
+}
+
+.center-card .card {
+  text-align: left;
+}
+
+label {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  background: #0b1220;
+  border: 1px solid #1f2937;
+  color: var(--text);
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  margin-top: 6px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-grid label {
+  grid-column: span 1;
+}
+
+.form-grid textarea {
+  grid-column: 1 / -1;
+}
+
+.form-inline {
+  display: flex;
+  gap: 8px;
+}
+
+.form-inline .grow {
+  flex: 1;
+}
+
+.banner {
+  background: #0b3a1e;
+  color: #bdf7d0;
+  border: 1px solid #1c4b2c;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.streak {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #fbbf24;
+}
+
+.pill {
+  background: var(--chip);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  background: var(--chip);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.row.spread {
+  justify-content: space-between;
+}
+
+.date {
+  font-weight: 600;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 12px;
+}
+
+.mt {
+  margin-top: 10px;
+}
+
+.note {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.md-preview h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+.md-preview ul {
+  margin: 6px 0;
+  padding-left: 18px;
+}
+
+.md-preview a {
+  color: var(--primary);
+}
+
+.quote {
+  padding: 10px 12px;
+  background: #0b1220;
+  border-left: 3px solid #374151;
+  border-radius: 8px;
+}
+
+.heat-heading {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.heat-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 18px);
+  gap: 6px;
+  padding: 10px;
+  background: #0b1220;
+  border-radius: 12px;
+}
+
+.heat-cell,
+.heat-pad {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background: #1f2937;
+  border: 1px solid #101827;
+}
+
+.heat-0 {
+  background: #1f2937;
+}
+
+.heat-1 {
+  background: #0e6f3a;
+}
+
+.heat-2 {
+  background: #178c4a;
+}
+
+.heat-3 {
+  background: #22a45a;
+}
+
+.heat-4 {
+  background: #2ec36f;
+}
+
+.bullets {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.comment {
+  padding: 8px 10px;
+  background: #0b1220;
+  border: 1px solid #1f2937;
+  border-radius: 10px;
+  margin-top: 8px;
+}
+
+.export-row {
+  padding: 8px 0;
+  border-bottom: 1px dashed #1f2937;
+}
