@@ -1,0 +1,36 @@
+.app {
+  text-align: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+}
+
+.timer-display {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.controls button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+  transition: 0.3s;
+}
+
+.controls button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.controls button:hover:not(:disabled) {
+  background: #0056b3;
+}
