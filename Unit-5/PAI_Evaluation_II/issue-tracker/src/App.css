@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f7fa;
+  color: #333;
+}
+
+.container {
+  max-height: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+input[type="text"] {
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  flex: 1;
+  min-width: 220px;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+button {
+  padding: 0.7rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+
+select,
+.filters input[type="text"] {
+  padding: 0.5rem 1 rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+select:focus,
+.filter input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.issue-card {
+  border: 1px solid #e0e0e0;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.issue-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+.issue-card p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.label {
+  display: inline-block;
+  background: #e1e4e8;
+  color: #333;
+  padding: 0.25rem 0.6rem;
+  margin-right: 0.4rem;
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+}
+
+p {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+}
