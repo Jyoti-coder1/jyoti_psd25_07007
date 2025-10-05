@@ -1,0 +1,19 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const taskRoutes = require('./routes/taskRoutes');
+
+const app = express();
+app.use(bodyParser.json());
+
+mongoose.connect('mongodb://127.0.0.1:27017/TaskDB', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.error('MongoDB connection error:', err));
+
+app.use('/tasks', taskRoutes);
+
+const PORT = 3000;
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
