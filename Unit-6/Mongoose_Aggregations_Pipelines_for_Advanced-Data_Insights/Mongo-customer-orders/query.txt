@@ -1,0 +1,37 @@
+1. Total amount spent by each customer:
+db.orders.aggregate([
+  { $group: { _id: "$customerId", totalSpent: { $sum: "$amount" } } }
+])
+
+2. Retrieve order details with corresponding customer info (JOIN using $lookup):
+db.orders.aggregate([
+  {
+    $lookup: {
+      from: "customers",
+      localField: "customerId",
+      foreignField: "_id",
+      as: "customerDetails"
+    }
+  }
+])
+
+3. Find orders with amount greater than Rs. 500:
+db.orders.find({ amount: { $gt: 500 } })
+
+4. Average order amount per customer:
+db.orders.aggregate([
+  { $group: { _id: "$customerId", avgAmount: { $avg: "$amount" } } }
+])
+
+5. Retrieve only orders that have a valid customer record ($lookup + $match):
+db.orders.aggregate([
+  {
+    $lookup: {
+      from: "customers",
+      localField: "customerId",
+      foreignField: "_id",
+      as: "customerDetails"
+    }
+  },
+  { $match: { customerDetails: { $ne: [] } } }
+])

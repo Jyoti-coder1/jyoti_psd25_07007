@@ -1,0 +1,46 @@
+1. Total sales amount for each product category:
+db.sales.aggregate([{ $group: { _id: "$category", totalSales: { $sum: "$amount" } } }])
+
+2. Month-wise total sales:
+db.sales.aggregate([
+  { $addFields: { month: { $substr: ["$date", 5, 2] } } },
+  { $group: { _id: "$month", totalSales: { $sum: "$amount" } } }
+])
+
+3. Highest-selling product (by revenue):
+db.sales.aggregate([
+  { $group: { _id: "$product", totalRevenue: { $sum: "$amount" } } },
+  { $sort: { totalRevenue: -1 } },
+  { $limit: 1 }
+])
+
+4. Average sale amount:
+db.sales.aggregate([{ $group: { _id: null, avgAmount: { $avg: "$amount" } } }])
+
+5. Count sales per month:
+db.sales.aggregate([
+  { $addFields: { month: { $substr: ["$date", 5, 2] } } },
+  { $group: { _id: "$month", count: { $sum: 1 } } }
+])
+
+6. Total sales per region:
+db.sales.aggregate([{ $group: { _id: "$region", totalSales: { $sum: "$amount" } } }])
+
+7. Top 3 highest revenue products:
+db.sales.aggregate([
+  { $group: { _id: "$product", totalRevenue: { $sum: "$amount" } } },
+  { $sort: { totalRevenue: -1 } },
+  { $limit: 3 }
+])
+
+8. Total number of sales transactions per category:
+db.sales.aggregate([{ $group: { _id: "$category", totalTransactions: { $sum: 1 } } }])
+
+9. Average sales amount for each region:
+db.sales.aggregate([{ $group: { _id: "$region", avgAmount: { $avg: "$amount" } } }])
+
+10. Total sales for Electronics and Fashion categories separately:
+db.sales.aggregate([
+  { $match: { category: { $in: ["Electronics", "Fashion"] } } },
+  { $group: { _id: "$category", totalSales: { $sum: "$amount" } } }
+])
