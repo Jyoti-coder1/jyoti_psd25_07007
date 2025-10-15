@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Real-Time Group Chat</h1>
+
+    <div>
+        <input type="text" id="username" placeholder="Enter your name">
+        <label><input type="checkbox" id="isAdmin"> Admin?</label>
+        <button id="joinBtn">Join Chat</button>
+    </div>
+
+    <div id="chatContainer" style="display:none;">
+        <h3>Online Users</h3>
+        <ul id="onlineUsers"></ul>
+
+        <h3>Chat</h3>
+        <div id="messages"></div>
+
+        <input type="text" id="msgInput" placeholder="Type a message">
+        <button id="sendBtn">Send</button>
+        <button id="disconnectBtn">Disconnect</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
