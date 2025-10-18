@@ -21,7 +21,7 @@ router.post("/login", async (req, res) => {
         const user = await User.findOne({ email });
         if (!user) return res.status(400).json({ message: "Invalid crendentials" });
         const isMatch = await user.comparePassword(password);
-        if (!isMatch) return res.status(400).json({ message: "Inavlid crendentials" });
+        if (!isMatch) return res.status(400).json({ message: "Invalid crendentials" });
 
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1d" });
         res.json({ token });

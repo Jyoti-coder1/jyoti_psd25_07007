@@ -3,12 +3,14 @@ const router = express.Router();
 const auth = require("../middleware/auth");
 const Review = require("../models/Review");
 
-router.post("/movieId", auth, async (req, res) => {
+router.post("/:movieId", auth, async (req, res) => {
     try {
         const { rating, comment } = req.body;
         const movieId = req.params.movieId;
         const existing = await Review.findOne({ user: req.user._id, movie: movieId });
         if (existing) return res.status(400).json({ message: "You already reviewed this movie" });
+
+        const review = new Review({ user: req.user._id, movie: movieId, rating, comment });
         await review.save();
         res.status(201).json(review);
     }

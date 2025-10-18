@@ -22,11 +22,11 @@ router.get("/", async (req, res) => {
    res.json(movies);
 });
 
-router.get("/", async (req, res) => {
+router.get("/:id", async (req, res) => {
    const movie = await Movie.findById(req.params.id);
    if (!movie) return res.status(404).json({ message: "Movie not found" });
    const reviews = await Review.find({ movie: movie._id }).populate("user", "name email");
-   res.json(movie, reviews);
+   res.json({ movie, reviews });
 });
 
 router.delete("/:id", auth, async (req, res) => {

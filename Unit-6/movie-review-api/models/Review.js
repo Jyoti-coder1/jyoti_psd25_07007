@@ -1,4 +1,4 @@
-const mongooose = require("mongoose");
+const mongoose = require("mongoose");
 const Movie = require("./Movie");
 
 const reviewSchema = new mongooose.Schema({
@@ -28,5 +28,5 @@ reviewSchema.post("findOneAndDelete", async function (doc) {
     if (doc) await updateAverageRating(doc.movie);
 });
 
-const Review = mongooose/model("Review", reviewSchema);
+const Review = mongoose/model("Review", reviewSchema);
 module.exports = Review;
